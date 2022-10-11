@@ -1,0 +1,5 @@
+const HomeContent = () => {
+  return <div className="home-content-container">Futuro content of pizzas</div>;
+};
+
+export default HomeContent;
