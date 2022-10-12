@@ -1,45 +1,65 @@
-.navbar-content-container{
-    display: flex;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
+.navbar-content-container {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
-.navbar-content-container .navbar-logo{
-    padding: 1rem;
-    width: 5%;
-    text-align: center;
+.navbar-content-container .navbar-logo {
+  padding: 1rem;
+  width: 5%;
+  text-align: center;
 }
-.navbar-content-container .navbar-logo img{
-    width: 100%;
-    transform: rotate(-40deg);
+.navbar-content-container .navbar-logo img {
+  width: 100%;
+  transform: rotate(-40deg);
 }
-.navbar-content-container .navbar-options{
-    padding: 1rem;
-    background-color: var(--bg-color-navbar-components);
-    width: 55%;
-    display: flex;
-    justify-content: space-around;
-    font-weight: 600;
-    color: var(--text-color-navbar);
-
+.navbar-content-container .navbar-options {
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  color: var(--text-color-navbar);
 }
-.navbar-content-container .navbar-options span:hover{
-    color: #ba151a;
-
+.navbar-content-container .navbar-options .navbar-option-container {
+  height: 100%;
+}
+.navbar-content-container .navbar-options .navbar-option-container span {
+  padding: 0.9rem 0 0.9rem 0;
+}
+.navbar-content-container .navbar-options .navbar-option-container:hover {
+  color: var(--text-color-navbar-important);
+  cursor: pointer;
+}
+.navbar-content-container .navbar-options .navbar-option-my-asks {
+  color: var(--text-color-navbar-important-disabled);
+}
+.navbar-content-container .navbar-options .navbar-option-menu {
+  color: var(--text-color-navbar-important);
+}
+.navbar-content-container .navbar-options .navbar-option-menu span {
+  padding: 0.9rem 0 0.9rem 0;
+}
+.navbar-content-container .navbar-options .navbar-option-menu span:hover {
+  cursor: pointer;
+}
+.navbar-content-container .navbar-options .navbar-option-enter span {
+  padding: 0.5rem 0 0.5rem 0;
 }
 .navbar-content-container .navbar-direction {
-    padding: 1rem;
-    background-color: var(--bg-color-navbar-components);
-    width: 20%;
-    text-align: center;
-    font-weight: 600;
-    color: var(--text-color-navbar);
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 20%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color-navbar);
 }
-.navbar-content-container .navbar-cart{
-    padding: 1rem;
-    background-color: var(--bg-color-navbar-components);
-    width: 5%;
-    text-align: center;
-    font-weight: 600;
-    color: var(--text-color-navbar);
+.navbar-content-container .navbar-cart {
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 5%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color-navbar);
 }
