@@ -5,6 +5,8 @@ import GeneralContext from "./Context/GeneralContext/Provider";
 import { Home, Error404 } from "./pages";
 // Layout
 import { Navbar, Footer } from "./Layout";
+// Style
+import "./App.css";
 
 const App = () => {
   return (
@@ -14,6 +16,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+
             <Route path="*" element={<Error404 />} />
           </Routes>
         </BrowserRouter>
