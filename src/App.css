@@ -29,6 +29,9 @@ a:active {
 .home-page-container {
   grid-area: main-content;
 }
+.stores-page-container {
+  grid-area: main-content;
+}
 .pizza-points-page-container {
   grid-area: main-content;
 }
