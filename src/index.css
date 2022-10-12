@@ -12,3 +12,31 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+
+.navbar-container{
+  grid-area: navbar
+}
+
+.home-page-container {
+  grid-area: main-content;
+}
+.error-404-container{
+  grid-area: main-content;
+}
+
+.footer-container {
+  grid-area: footer;
+}
+
+.app-container {
+  display: grid;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  grid-template-areas:
+    "navbar"
+    "main-content"
+    "footer";
+  grid-template-rows: 3.5rem 96% 4rem;
+  grid-template-columns: 100%;
+}
