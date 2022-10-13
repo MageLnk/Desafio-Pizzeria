@@ -1,0 +1,20 @@
+.navbar-direction-container {
+  padding: 0.369rem 1rem 0.369rem 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 15%;
+  color: var(--text-color-navbar);
+}
+.navbar-direction-group {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-direction-delivery {
+  font-weight: 0;
+}
+.navbar-direction-direction {
+  font-weight: 600;
+}
+.navbar-direction-direction:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+.navbar-cart {
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 5%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color-navbar);
+}
