@@ -4,6 +4,7 @@ import NavbarOptionLogin from "./NavbarOptionLogin";
 // Style
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 import { GiHotMeal } from "react-icons/gi";
+import "./NavbarOptions.css";
 // App
 const NavbarOptions = () => {
   return (

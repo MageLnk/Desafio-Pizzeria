@@ -1,0 +1,53 @@
+.navbar-options {
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  color: var(--text-color-navbar);
+}
+.navbar-options .navbar-option-container {
+  height: 100%;
+}
+.navbar-options .navbar-option-container span {
+  padding: 0.9rem 0 0.9rem 0;
+}
+.navbar-options .navbar-option-container:hover {
+  color: var(--text-color-navbar-important);
+  cursor: pointer;
+}
+.navbar-options .navbar-option-my-asks {
+  color: var(--text-color-navbar-important-disabled);
+}
+.navbar-options .navbar-option-menu {
+  color: var(--text-color-navbar-important);
+}
+.navbar-options .navbar-option-menu span {
+  padding: 0.9rem 0 0.9rem 0;
+}
+.navbar-options .navbar-option-menu span:hover {
+  cursor: pointer;
+}
+.navbar-options .navbar-option-enter span {
+  padding: 0.5rem 0 0.5rem 0;
+}
+.navbar-option-active {
+  color: var(--text-color-navbar-important);
+}
+.navbar-direction {
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 15%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color-navbar);
+}
+.navbar-cart {
+  padding: 1rem;
+  background-color: var(--bg-color-navbar-components);
+  width: 5%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color-navbar);
+}
