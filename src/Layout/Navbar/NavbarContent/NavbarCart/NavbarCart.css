@@ -1,8 +1,12 @@
 .navbar-cart {
-  padding: 1rem;
-  background-color: var(--bg-color-navbar-components);
+  padding: 0.781rem;
+  background-color: #b8b8b8;
   width: 5%;
   text-align: center;
   font-weight: 600;
   color: var(--text-color-navbar);
+}
+.navbar-cart-icon {
+  font-size: 25px;
+  color: white;
 }
