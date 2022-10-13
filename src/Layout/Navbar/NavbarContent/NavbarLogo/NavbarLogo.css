@@ -1,0 +1,9 @@
+.navbar-logo {
+  padding: 1rem;
+  width: 10%;
+  text-align: center;
+}
+.navbar-logo img {
+  width: 100%;
+  transform: rotate(-40deg);
+}

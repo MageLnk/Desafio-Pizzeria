@@ -2,7 +2,7 @@ import NavbarContent from "./NavbarContent";
 
 const Navbar = () => {
   return (
-    <div className="Navbar-container">
+    <div className="navbar-container">
       <NavbarContent />
     </div>
   );

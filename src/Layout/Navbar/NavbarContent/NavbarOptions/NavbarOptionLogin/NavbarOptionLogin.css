@@ -1,0 +1,8 @@
+.navbar-option-enter-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.navbar-option-enter-form span {
+  margin: 0.2rem 0 0.2rem 0;
+}

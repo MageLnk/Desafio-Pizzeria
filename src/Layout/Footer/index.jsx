@@ -1,5 +1,6 @@
+// Component
 import FooterContent from "./FooterContent";
-
+// App
 const Footer = () => {
   return (
     <div className="footer-container">

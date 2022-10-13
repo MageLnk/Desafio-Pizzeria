@@ -1,26 +1,42 @@
+@import "~antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Lato:wght@300;700&display=swap");
+
+:root {
+  --bg-main-color: #f5f5f5;
+  --bg-color-navbar-components: #fff;
+  --text-color-navbar: #717171;
+  --text-color-navbar-important: #ba151a;
+  --text-color-navbar-important-disabled: #b8b8b8;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Allura", cursive;
   font-family: "Lato", sans-serif;
+  background-color: var(--bg-main-color);
 }
 a,
 a:hover,
-a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
 }
 
-.navbar-container{
-  grid-area: navbar
+.navbar-container {
+  grid-area: navbar;
 }
 
 .home-page-container {
   grid-area: main-content;
 }
-.error-404-container{
+.stores-page-container {
+  grid-area: main-content;
+}
+.pizza-points-page-container {
+  grid-area: main-content;
+}
+.error-404-container {
   grid-area: main-content;
 }
 
@@ -37,6 +53,6 @@ a:active {
     "navbar"
     "main-content"
     "footer";
-  grid-template-rows: 3.5rem 96% 4rem;
+  grid-template-rows: 4rem 96% 5rem;
   grid-template-columns: 100%;
 }
