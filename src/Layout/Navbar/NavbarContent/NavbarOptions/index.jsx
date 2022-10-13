@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
+// Component
+import NavbarOptionLogin from "./NavbarOptionLogin";
 // Style
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 import { GiHotMeal } from "react-icons/gi";
-import { GoPerson } from "react-icons/go";
 // App
 const NavbarOptions = () => {
   return (
@@ -29,11 +30,7 @@ const NavbarOptions = () => {
           <span>Locales</span>
         </NavLink>
       </div>
-      <div className="navbar-option-enter">
-        <span>
-          <GoPerson className="navbar-option-enter-icon" /> Ingresar
-        </span>
-      </div>
+      <NavbarOptionLogin />
     </div>
   );
 };
