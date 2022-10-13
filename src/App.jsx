@@ -12,17 +12,19 @@ const App = () => {
   return (
     <GeneralContext>
       <div className="app-container">
-        <Navbar />
         <BrowserRouter>
+          <Navbar />
+
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route parth="/pizza-points" element={<PizzaPoints />} />
-            <Route parth="/stores" element={<Stores />} />
+            <Route path="/stores" element={<Stores />} />
+            <Route path="/pizza-points" element={<PizzaPoints />} />
 
             <Route path="*" element={<Error404 />} />
           </Routes>
+
+          <Footer />
         </BrowserRouter>
-        <Footer />
       </div>
     </GeneralContext>
   );

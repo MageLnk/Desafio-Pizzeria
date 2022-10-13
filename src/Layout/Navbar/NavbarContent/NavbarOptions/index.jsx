@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 // Style
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 import { GiHotMeal } from "react-icons/gi";
@@ -8,11 +9,15 @@ const NavbarOptions = () => {
     <div className="navbar-options">
       <div className="navbar-option-menu">
         <span>
-          <GiHotMeal style={{ fontSize: "18px" }} /> Menú
+          <NavLink to={`/`}>
+            <GiHotMeal style={{ fontSize: "18px" }} /> Menú
+          </NavLink>
         </span>
       </div>
       <div className="navbar-option-container">
-        <span>Pizza puntos</span>
+        <NavLink to={`/pizza-points`} className={({ isActive }) => (isActive ? "navbar-option-active" : "")}>
+          <span>Pizza puntos</span>
+        </NavLink>
       </div>
       <div className="navbar-option-my-asks">
         <span>
@@ -20,7 +25,9 @@ const NavbarOptions = () => {
         </span>
       </div>
       <div className="navbar-option-container">
-        <span>Locales</span>
+        <NavLink to={`/stores`} className={({ isActive }) => (isActive ? "navbar-option-active" : "")}>
+          <span>Locales</span>
+        </NavLink>
       </div>
       <div className="navbar-option-enter">
         <span>
