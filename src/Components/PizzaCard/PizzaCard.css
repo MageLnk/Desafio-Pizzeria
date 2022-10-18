@@ -1,5 +1,5 @@
 .card-pizza-container {
-  margin: 1rem 2rem 1rem 2rem;
+  margin: 0.5rem 1rem 0.5rem 1rem;
   width: 260px;
 }
 
@@ -10,6 +10,15 @@
 .card-pizza-container .ant-card .ant-card-body {
   padding: 0;
   margin: 1rem 0.5rem 1rem 0.5rem;
+}
+.card-pizza-container .ant-card .ant-card-body button {
+  background-color: var(--bg-color-buttons);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem;
+  width: 6rem;
+  cursor: pointer;
 }
 .card-pizza-container .ant-card .ant-card-body h4 {
   text-align: center;
