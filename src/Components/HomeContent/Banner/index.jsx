@@ -18,25 +18,26 @@ const Banner = () => {
   };
 
   const onChange = (currentSlide) => {
-    console.log(currentSlide);
+    //console.log(currentSlide);
   };
 
-  console.log("dataaa", data);
+  // console.log("Log para la data, para las imágenes del banner", data)
+
   return (
     <div className="banner-container">
       {data && (
         <Carousel autoplay afterChange={onChange}>
           <div>
-            <h3 style={contentStyle}>1</h3>
+            <h3 style={contentStyle}>Working Progress</h3>
           </div>
           <div>
-            <h3 style={contentStyle}>2</h3>
+            <h3 style={contentStyle}>Working Progress</h3>
           </div>
           <div>
-            <h3 style={contentStyle}>3</h3>
+            <h3 style={contentStyle}>Working Progress</h3>
           </div>
           <div>
-            <h3 style={contentStyle}>4</h3>
+            <h3 style={contentStyle}>Working Progress</h3>
           </div>
         </Carousel>
       )}
