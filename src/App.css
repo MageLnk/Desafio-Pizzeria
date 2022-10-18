@@ -33,6 +33,9 @@ a:active {
 .stores-page-container {
   grid-area: main-content;
 }
+.pizza-detail-page-container {
+  grid-area: main-content;
+}
 .pizza-points-page-container {
   grid-area: main-content;
 }

@@ -31,6 +31,9 @@ const NavbarOptionLogin = () => {
           <span>Contraseña</span>
           <Input prefix={<AiOutlineUser />} />
         </form>
+        <h4 style={{ marginTop: "2rem" }}>
+          NOTA: Este login es una simulación de cómo se vería el Login
+        </h4>
       </Modal>
     </div>
   );

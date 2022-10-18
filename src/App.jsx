@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Context
 import GeneralContext from "./Context/GeneralContext/Provider";
 // Components
-import { Home, Stores, Error404, PizzaPoints } from "./pages";
+import { Home, Stores, PizzaDetail, PizzaPoints, Error404 } from "./pages";
 // Layout
 import { Navbar, Footer } from "./Layout";
 // Style
@@ -18,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/stores" element={<Stores />} />
+            <Route path="/pizza/:id" element={<PizzaDetail />} />
             <Route path="/pizza-points" element={<PizzaPoints />} />
 
             <Route path="*" element={<Error404 />} />
