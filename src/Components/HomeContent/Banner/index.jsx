@@ -10,9 +10,9 @@ const Banner = () => {
 
   const contentStyle = {
     with: "100%",
-    height: "100%",
+    height: "25rem",
     color: "#fff",
-    lineHeight: "160px",
+    lineHeight: "13rem",
     textAlign: "center",
     background: "#364d79",
   };
