@@ -1,6 +1,6 @@
 import { useContext } from "react";
 // Context
-import GeneralContext from "../../../Context/GeneralContext";
+import GeneralContext from "../../../../Context/GeneralContext";
 // Style
 import { Carousel } from "antd";
 import "./Banner.css";

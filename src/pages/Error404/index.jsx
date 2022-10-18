@@ -1,5 +1,5 @@
 // Component
-import { Error404Content } from "../../Components";
+import { Error404Content } from "../../Components/ContentComponents";
 // App
 const Error404 = () => {
   return (

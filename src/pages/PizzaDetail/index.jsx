@@ -1,5 +1,5 @@
 // Componets
-import { PizzaDetailContent } from "../../Components";
+import { PizzaDetailContent } from "../../Components/ContentComponents";
 // App
 const PizzaDetail = () => {
   return (
