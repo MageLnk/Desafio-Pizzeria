@@ -31,6 +31,9 @@ a:active {
 .home-page-container {
   grid-area: main-content;
 }
+.cart-content-container {
+  grid-area: main-content;
+}
 .stores-page-container {
   grid-area: main-content;
 }
