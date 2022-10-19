@@ -6,8 +6,8 @@ const StoresContent = () => {
     <div
       style={{ display: "flex", height: "100%", justifyContent: "center", alignItems: "center" }}
     >
-      En esta vista estará un mapa de googleMaps para poder encontrar el local más cercano. Working
-      progress
+      En esta vista estará un mapa de googleMaps para poder encontrar el local más cercano. WORKING
+      PROGRESS
     </div>
   );
 };
