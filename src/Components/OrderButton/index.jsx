@@ -7,7 +7,7 @@ import "./OrderButton.css";
 const OrderButton = ({ pizzaId }) => {
   const { handleCart } = useContext(GeneralContext);
   return (
-    <button className="order-button" onClick={() => handleCart(pizzaId)}>
+    <button className="order-button" onClick={() => handleCart(pizzaId, "Add", 1)}>
       Pedir
     </button>
   );

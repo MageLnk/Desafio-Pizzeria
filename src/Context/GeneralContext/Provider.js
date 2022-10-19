@@ -6,13 +6,56 @@ import dummyData from "../../dummyData/pizzas.json";
 
 const GeneralContextProvider = ({ children }) => {
   const [data, setData] = useState("");
-  const [cart, setCart] = useState("");
+  const [cartTotal, setCartTotal] = useState(undefined);
+  const [cartData, setCartData] = useState([]);
 
-  const handleCart = (pizzaId) => {
-    console.log(pizzaId);
-    setCart(1);
+  const addPizzaData = (IdPizza, price, additions, quantity, totalData) => {
+    let newArrayPizzaData = totalData;
+    let newObjectPizzaData = {};
+    newObjectPizzaData = {
+      id: IdPizza,
+      price: price,
+      additions: additions,
+      quantity: quantity,
+    };
+    newArrayPizzaData.push(newObjectPizzaData);
+    setCartData([...newArrayPizzaData]);
   };
 
+  const handleCart = (pizzaId, action, quantity) => {
+    console.log("Pizza ID", pizzaId);
+    console.log("Action", action);
+    console.log("Quantity", quantity);
+
+    const FindMatchPizza = data.filter((result) => result.id === pizzaId);
+
+    if (cartData.length !== 0) {
+      setCartTotal(cartTotal + quantity);
+
+      const findMatch = cartData.findIndex((object) => object.id === pizzaId);
+      if (findMatch === -1) {
+        // -1 = NO hay match, entonces, agrega uno nuevo
+        addPizzaData(pizzaId, FindMatchPizza[0].price, undefined, quantity, cartData);
+      }
+      if (findMatch !== -1) {
+        // Si es distinto de -1 entonces HAY match, entonces, hay que modificar el quantity acorde al quantity
+        if (action === "Add") {
+          let newArrayPizzaData = cartData;
+          newArrayPizzaData.forEach((element) => {
+            if (element.id === pizzaId) {
+              element.quantity = element.quantity + quantity;
+            }
+          });
+          setCartData([...newArrayPizzaData]);
+        }
+        // Acá agregar el restar
+      }
+    }
+    if (cartData.length === 0) {
+      setCartTotal(quantity);
+      addPizzaData(pizzaId, FindMatchPizza[0].price, undefined, quantity, cartData);
+    }
+  };
   useEffect(() => {
     if (dummyData) {
       setData(dummyData);
@@ -20,7 +63,9 @@ const GeneralContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <GeneralContext.Provider value={{ data, cart, handleCart }}>{children}</GeneralContext.Provider>
+    <GeneralContext.Provider value={{ data, cartTotal, cartData, handleCart }}>
+      {children}
+    </GeneralContext.Provider>
   );
 };
 
@@ -30,8 +75,8 @@ export default GeneralContextProvider;
 
 Necesito guardar el ID en un arreglo, acá mismo.
 
-Ese arreglo, necesita guardar el precio y la cantidad de pizzas, además de los adicionales.
+Son dos arreglos, cart y cartData, necesita guardar el precio y la cantidad de pizzas, además de los adicionales.
 
-
+NOTA: Cart tiene que manejar solo el total del arreglo para mostrar
 
 */

@@ -8,7 +8,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 // App
 const NavbarCart = () => {
   const navigate = useNavigate();
-  const { cart } = useContext(GeneralContext);
+  const { cartTotal } = useContext(GeneralContext);
 
   const handleCartClic = (validationCart) => {
     if (!validationCart) {
@@ -19,11 +19,11 @@ const NavbarCart = () => {
 
   return (
     <div
-      className={!cart ? "navbar-cart" : "navbar-cart-valid"}
-      onClick={() => handleCartClic(cart)}
+      className={!cartTotal ? "navbar-cart" : "navbar-cart-valid"}
+      onClick={() => handleCartClic(cartTotal)}
     >
       <AiOutlineShoppingCart className="navbar-cart-icon" />
-      {cart && <div className="navbar-number">{cart}</div>}
+      {cartTotal && <div className="navbar-number">{cartTotal}</div>}
     </div>
   );
 };
