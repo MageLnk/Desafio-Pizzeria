@@ -6,14 +6,22 @@
   font-weight: 600;
   color: var(--text-color-navbar);
 }
+.navbar-cart-valid {
+  padding: 0.781rem;
+  background-color: #b8b8b8;
+  width: 5%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color-navbar);
+}
+.navbar-cart-valid:hover {
+  background-color: var(--bg-color-buttons);
+}
+
 .navbar-cart-icon {
   font-size: 25px;
   color: white;
 }
-.navbar-cart:hover {
-  background-color: var(--bg-color-buttons);
-}
-
 .navbar-number {
   position: absolute;
   top: 30px;
