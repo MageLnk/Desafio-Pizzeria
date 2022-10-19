@@ -23,7 +23,7 @@ const NavbarCart = () => {
       onClick={() => handleCartClic(cartTotal)}
     >
       <AiOutlineShoppingCart className="navbar-cart-icon" />
-      {cartTotal && <div className="navbar-number">{cartTotal}</div>}
+      {cartTotal === 0 ? <></> : <div className="navbar-number">{cartTotal}</div>}
     </div>
   );
 };

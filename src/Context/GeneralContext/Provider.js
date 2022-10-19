@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import GeneralContext from "./";
 // dummyData
 import dummyData from "../../dummyData/pizzas.json";
+import { act } from "react-dom/test-utils";
 
 const GeneralContextProvider = ({ children }) => {
   const [data, setData] = useState("");
-  const [cartTotal, setCartTotal] = useState(undefined);
+  const [cartTotal, setCartTotal] = useState(0);
   const [cartData, setCartData] = useState([]);
 
   const addPizzaData = (IdPizza, price, additions, quantity, totalData) => {
@@ -23,27 +24,38 @@ const GeneralContextProvider = ({ children }) => {
   };
 
   const handleCart = (pizzaId, action, quantity) => {
-    console.log("Pizza ID", pizzaId);
-    console.log("Action", action);
-    console.log("Quantity", quantity);
-
     const FindMatchPizza = data.filter((result) => result.id === pizzaId);
 
     if (cartData.length !== 0) {
-      setCartTotal(cartTotal + quantity);
-
       const findMatch = cartData.findIndex((object) => object.id === pizzaId);
       if (findMatch === -1) {
         // -1 = NO hay match, entonces, agrega uno nuevo
+        setCartTotal(cartTotal + quantity);
         addPizzaData(pizzaId, FindMatchPizza[0].price, undefined, quantity, cartData);
       }
       if (findMatch !== -1) {
         // Si es distinto de -1 entonces HAY match, entonces, hay que modificar el quantity acorde al quantity
+        let newArrayPizzaData = cartData;
         if (action === "Add") {
-          let newArrayPizzaData = cartData;
+          setCartTotal(cartTotal + quantity);
           newArrayPizzaData.forEach((element) => {
             if (element.id === pizzaId) {
               element.quantity = element.quantity + quantity;
+            }
+          });
+          setCartData([...newArrayPizzaData]);
+        }
+        if (action === "Subtract") {
+          if (cartTotal === 0) {
+            return;
+          }
+          newArrayPizzaData.forEach((element) => {
+            if (element.id === pizzaId) {
+              if (element.quantity === 0) {
+                return;
+              }
+              setCartTotal(cartTotal - quantity);
+              element.quantity = element.quantity - quantity;
             }
           });
           setCartData([...newArrayPizzaData]);

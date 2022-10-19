@@ -8,7 +8,7 @@ import { mayusFirstLetter } from "../../../utilities";
 // App
 const CartConent = () => {
   const { cartData, data, handleCart } = useContext(GeneralContext);
-  let total = 0;
+  let bigTotal = 0;
   // Esto es buena práctica??
 
   const pizzaTotal = (quantity, price) => {
@@ -17,8 +17,7 @@ const CartConent = () => {
 
   const deployCartData = (dataToDeploy) => {
     const deployingData = dataToDeploy.map((element) => {
-      total = total + pizzaTotal(element.quantity, element.price);
-      console.log("Elem", element);
+      bigTotal = bigTotal + pizzaTotal(element.quantity, element.price);
       const filterData = data.filter((filterElement) => filterElement.id === element.id);
       return (
         <div key={element.id} className="cart-total-order">
@@ -29,7 +28,12 @@ const CartConent = () => {
 
           <div className="cart-total-info-container">
             <span>$ {pizzaTotal(element.quantity, element.price)}</span>
-            <button className="cart-button-rest">-</button>
+            <button
+              className="cart-button-rest"
+              onClick={() => handleCart(element.id, "Subtract", 1)}
+            >
+              -
+            </button>
             <span>{element.quantity}</span>
             <button className="cart-button-sum" onClick={() => handleCart(element.id, "Add", 1)}>
               +
@@ -51,7 +55,7 @@ const CartConent = () => {
         <div>
           <h1 className="cart-title">Las pizzas que ha ordenado:</h1>
           {deployCartData(cartData)}
-          <h2>Total: $ {total}</h2>
+          <h2>Total: $ {bigTotal}</h2>
         </div>
       )}
     </div>
