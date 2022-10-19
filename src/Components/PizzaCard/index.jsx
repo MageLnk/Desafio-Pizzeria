@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { mayusFirstLetter } from "../../utilities";
 // App
 const PizzaCard = ({ pizzaInfo }) => {
-  console.log("AFDS", pizzaInfo);
   return (
     <div className="card-pizza-container">
       <Card hoverable style={{ cursor: "default" }} cover={<img alt="pizza" src={pizzaInfo.img} />}>
