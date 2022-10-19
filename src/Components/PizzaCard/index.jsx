@@ -1,3 +1,5 @@
+// Components
+import OrderButton from "../OrderButton";
 // Style
 import "./PizzaCard.css";
 import { Card } from "antd";
@@ -17,7 +19,7 @@ const PizzaCard = ({ pizzaInfo }) => {
             <button>Más info</button>
           </Link>
 
-          <button>Pedir</button>
+          <OrderButton pizzaId={pizzaInfo.id} />
         </div>
       </Card>
     </div>
