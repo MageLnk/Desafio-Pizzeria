@@ -19,25 +19,24 @@ const Banner = () => {
 
   const onChange = (currentSlide) => {
     //console.log(currentSlide);
+    // Esto se deja para futuras y posibles acciones para el banner. Promociones por ejemplo
   };
-
-  // console.log("Log para la data, para las imágenes del banner", data)
 
   return (
     <div className="banner-container">
       {data && (
         <Carousel autoplay afterChange={onChange}>
-          <div>
-            <h3 style={contentStyle}>Working Progress</h3>
+          <div style={contentStyle}>
+            <img style={{ width: "100%", height: "25rem" }} alt={data.name} src={data[0].img} />
           </div>
-          <div>
-            <h3 style={contentStyle}>Working Progress</h3>
+          <div style={contentStyle}>
+            <img style={{ width: "100%", height: "25rem" }} alt={data.name} src={data[1].img} />
           </div>
-          <div>
-            <h3 style={contentStyle}>Working Progress</h3>
+          <div style={contentStyle}>
+            <img style={{ width: "100%", height: "25rem" }} alt={data.name} src={data[2].img} />
           </div>
-          <div>
-            <h3 style={contentStyle}>Working Progress</h3>
+          <div style={contentStyle}>
+            <img style={{ width: "100%", height: "25rem" }} alt={data.name} src={data[3].img} />
           </div>
         </Carousel>
       )}
