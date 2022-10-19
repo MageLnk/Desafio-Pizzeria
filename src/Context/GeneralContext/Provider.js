@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import GeneralContext from "./";
 // dummyData
 import dummyData from "../../dummyData/pizzas.json";
-import { act } from "react-dom/test-utils";
 
 const GeneralContextProvider = ({ children }) => {
   const [data, setData] = useState("");
@@ -21,6 +20,16 @@ const GeneralContextProvider = ({ children }) => {
     };
     newArrayPizzaData.push(newObjectPizzaData);
     setCartData([...newArrayPizzaData]);
+  };
+
+  const checkCart = (dataToCheck) => {
+    let newArrayPizzaData = dataToCheck;
+    newArrayPizzaData.forEach((element, i) => {
+      if (element.quantity === 0) {
+        newArrayPizzaData.splice(i, 1);
+        setCartData([...newArrayPizzaData]);
+      }
+    });
   };
 
   const handleCart = (pizzaId, action, quantity) => {
@@ -49,18 +58,19 @@ const GeneralContextProvider = ({ children }) => {
           if (cartTotal === 0) {
             return;
           }
+          // La validación de arriba es para que el carrito no sea negativo
           newArrayPizzaData.forEach((element) => {
             if (element.id === pizzaId) {
               if (element.quantity === 0) {
                 return;
               }
+              // La validación de arriba es para que el carrito no sea negativo
               setCartTotal(cartTotal - quantity);
               element.quantity = element.quantity - quantity;
             }
           });
           setCartData([...newArrayPizzaData]);
         }
-        // Acá agregar el restar
       }
     }
     if (cartData.length === 0) {
@@ -75,7 +85,7 @@ const GeneralContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <GeneralContext.Provider value={{ data, cartTotal, cartData, handleCart }}>
+    <GeneralContext.Provider value={{ data, cartTotal, cartData, handleCart, checkCart }}>
       {children}
     </GeneralContext.Provider>
   );

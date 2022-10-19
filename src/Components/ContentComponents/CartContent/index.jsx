@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 // Context
 import GeneralContext from "../../../Context/GeneralContext";
 // Style
@@ -7,7 +7,7 @@ import "./CartContent.css";
 import { mayusFirstLetter } from "../../../utilities";
 // App
 const CartConent = () => {
-  const { cartData, data, handleCart } = useContext(GeneralContext);
+  const { cartData, data, handleCart, checkCart } = useContext(GeneralContext);
   let bigTotal = 0;
   // Esto es buena práctica??
 
@@ -29,7 +29,8 @@ const CartConent = () => {
           <div className="cart-total-info-container">
             <span>$ {pizzaTotal(element.quantity, element.price)}</span>
             <button
-              className="cart-button-rest"
+              disabled={element.quantity === 0 && true}
+              className={element.quantity === 1 ? "cart-button-rest-danger" : "cart-button-rest"}
               onClick={() => handleCart(element.id, "Subtract", 1)}
             >
               -
@@ -45,6 +46,14 @@ const CartConent = () => {
     return deployingData;
   };
 
+  useEffect(() => {
+    checkCart(cartData);
+    // eslint-disable-next-line
+  }, []);
+  // NOTA. Si le pongo el cartData al useEffect [], las validaciones del carrito quedan inútiles.
+  // Además, al momento que llega a 0, desaparece. Si se la dejo así, entonces, la página queda como está ahora.
+  // Básicamente, si vuelves a entrar al carrito, y dejaste alguna pizza en "0", desaparece
+
   return (
     <div className="cart-content-container">
       {!cartData ? (
@@ -55,7 +64,9 @@ const CartConent = () => {
         <div>
           <h1 className="cart-title">Las pizzas que ha ordenado:</h1>
           {deployCartData(cartData)}
-          <h2>Total: $ {bigTotal}</h2>
+          <h2>
+            Total: $ <b>{bigTotal}</b>
+          </h2>
         </div>
       )}
     </div>

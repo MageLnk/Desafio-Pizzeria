@@ -43,6 +43,12 @@
   background-color: var(--bg-color-buttons);
   color: white;
 }
+.cart-content-container .cart-total-order .cart-button-rest:disabled {
+  cursor: default;
+  background-color: gray;
+  color: black;
+  border: none;
+}
 .cart-content-container .cart-total-order .cart-button-sum {
   background-color: white;
   border: 1px var(--bg-color-buttons) solid;
@@ -54,5 +60,18 @@
 .cart-content-container .cart-total-order .cart-button-sum:hover {
   cursor: pointer;
   background-color: var(--bg-color-buttons);
+  color: white;
+}
+.cart-content-container .cart-total-order .cart-button-rest-danger {
+  background-color: white;
+  border: 1px var(--bg-color-buttons) solid;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  color: var(--bg-color-buttons);
+}
+.cart-content-container .cart-total-order .cart-button-rest-danger:hover {
+  cursor: pointer;
+  background-color: red;
   color: white;
 }
