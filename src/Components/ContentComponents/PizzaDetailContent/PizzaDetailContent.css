@@ -1,0 +1,24 @@
+.pizza-detail-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pizza-detail-content-container .pizza-detail-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.pizza-detail-content-container .pizza-detail-content span {
+  margin: 0.3rem 0 0.3rem 0;
+}
+.pizza-detail-content-container .pizza-detail-content button {
+  background-color: var(--bg-color-buttons);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 6rem;
+  padding: 0.6rem;
+  margin: 1rem 0 0 0;
+}

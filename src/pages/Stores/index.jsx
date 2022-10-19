@@ -1,5 +1,5 @@
 // Components
-import { StoresContent } from "../../Components";
+import { StoresContent } from "../../Components/ContentComponents";
 // App
 const Stores = () => {
   return (
